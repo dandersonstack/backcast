@@ -22,6 +22,9 @@
   <script src="src/collections/videos.js"></script>
   <script src="src/lib/templateUrl.js"></script>
 
+<!-- This next line should be taken out when we get REAL Data -->
+  <script src="src/data/exampleVideoData.js"></script>
+
   <script src="src/views/app.js"></script>
   <script src="src/views/search.js"></script>
   <script src="src/views/videoList.js"></script>
@@ -30,7 +33,8 @@
 
   <script>
     backboneReady(() => {
-      new AppView();
+      var videos = new Videos(exampleVideoData);
+      new AppView({collection: videos});
     });
   </script>
 
