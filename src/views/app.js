@@ -6,6 +6,8 @@ var AppView = Backbone.View.extend({
     this.render();
   },
 
+  
+
   render: function() {
     this.$el.html(this.template());
 
@@ -21,6 +23,7 @@ var AppView = Backbone.View.extend({
 
     new SearchView({
       el: this.$('.search'),
+      collection: this.collection,
     }).render();
     return this;
   },
