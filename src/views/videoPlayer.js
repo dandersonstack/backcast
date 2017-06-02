@@ -3,7 +3,7 @@ var VideoPlayerView = Backbone.View.extend({
   initialize: function() {
     this.currentVideo = this.collection.models[0];
     Backbone.on('select', this.updateVideo, this);
-    this.listenTo(this.collection, 'sync', ()=>{this.updateVideo(this.collection.models[0]); });  
+    this.listenTo(this.collection, 'sync', ()=>{ this.updateVideo(this.collection.models[0]); });  
   },
 
   updateVideo(e) {

@@ -1,12 +1,20 @@
 var SearchView = Backbone.View.extend({
 
+  currentSearch: '',
+  
   events: {
-    'click .btn': 'handleClick',
-    'keyup .form-control': 'handleType'
+    'click .btn-search': 'handleClick',
+    'keyup .form-control': 'handleType',
+    'click .btn-next': 'handleNext',
   },
   
+
   handleType: function() {
     _.debounce(()=>{ this.collection.search(this.$el.find('.form-control').val()); }, 500)();
+  },
+
+  handleNext: function() {
+    this.collection.next(this.$el.find('.form-control').val());
   },
 
   handleClick: function() {
